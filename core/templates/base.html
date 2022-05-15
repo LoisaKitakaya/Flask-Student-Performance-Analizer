@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery -->
+
+    <!-- style.css -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- style.css -->
+
+    <!-- page title -->
+    <title>{% block title %} {% endblock %}</title>
+    <!-- page title -->
+  </head>
+  <!--  -->
+  <body>
+    <!-- dashboard -->
+    <div class="dashboard">
+      <!-- app goes here -->
+      {% block app %}
+      <!--  -->
+      {% endblock %}
+      <!-- app goes here -->
+    </div>
+    <!-- dashboard -->
+  </body>
+  <!--  -->
+
+  <!-- main.js -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <!-- main.js -->
+</html>
