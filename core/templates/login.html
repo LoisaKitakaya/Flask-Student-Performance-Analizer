@@ -1,0 +1,53 @@
+<!-- inherit from base template -->
+{% extends 'base.html' %}
+<!-- inherit from base template -->
+
+<!-- page title -->
+{% block title %} login {% endblock %}
+<!-- page title -->
+
+<!-- app content -->
+{% block app %}
+<!-- app goes here -->
+<div class="login">
+  <form action="/login" method="POST" class="box auth-form">
+      <p class="is-size-3 has-text-centered">Log in form</p>
+    <hr />
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input
+          class="input"
+          name="email"
+          type="email"
+          required
+          placeholder="e.g. alexsmith@gmail.com"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input
+          type="password"
+          name="password"
+          required
+          class="input"
+          placeholder="*********"
+        />
+      </div>
+    </div>
+
+    <div class="control submit-btn">
+      <button type="submit" class="button is-primary">Submit</button>
+    </div>
+  </form>
+  <p class="has-text-centered has-text-light is-size-4">
+    If you don't have an account, signup
+    <a href="/signup" class="has-text-dark is-underlined">here</a>.
+  </p>
+</div>
+<!-- app goes here -->
+{% endblock %}
+<!-- app content -->

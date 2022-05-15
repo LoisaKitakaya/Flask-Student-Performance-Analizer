@@ -9,7 +9,7 @@ class User(db.Model):
 
     def __repr__(self) -> str:
         
-        return self.name
+        return f'Username: {self.name}'
 
 class Student(db.Model):
 
@@ -21,7 +21,7 @@ class Student(db.Model):
 
     def __repr__(self) -> str:
         
-        return self.name
+        return f'Student name: {self.name}'
 
 class Grades(db.Model):
     
@@ -34,4 +34,4 @@ class Grades(db.Model):
 
     def __repr__(self) -> str:
         
-        return self.student_id
+        return f'Grades for user with id: {str(self.student_id)}'
