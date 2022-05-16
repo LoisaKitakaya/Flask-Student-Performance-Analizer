@@ -72,7 +72,7 @@
     <!-- navigation -->
 
     <!-- dashboard -->
-    <div class="app has-background-primary-dark">
+    <div class="app">
       <!-- app goes here -->
       {% block app %}
       <!--  -->
@@ -112,6 +112,12 @@
     <!-- app messages -->
   </body>
   <!--  -->
+
+  <!-- chart data to pass to main.js -->
+  <script>
+    let myVar = "{{ logged_user }}";
+  </script>
+  <!-- chart data to pass to main.js -->
 
   <!-- main.js -->
   <script src="{{ url_for('static', filename='main.js') }}"></script>

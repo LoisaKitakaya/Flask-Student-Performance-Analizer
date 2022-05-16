@@ -4,6 +4,7 @@
 
 .app {
   min-height: 100vh;
+  background-image: url("https://res.cloudinary.com/dit0fii18/image/upload/v1652679502/samples/backgrounds/vintage-textured-paper-background-vector_resized_ex6h4g.jpg");
 }
 
 .submit-btn {
@@ -31,6 +32,19 @@
 .notification {
   width: fit-content !important;
   position: fixed !important;
-  top: 5rem !important;
+  bottom: 1rem !important;
   right: 1rem !important;
+  z-index: 99 !important;
+  opacity: 0.9 !important;
+}
+
+.box,
+.card,
+.navbar {
+  background-color: whitesmoke !important;
+  opacity: 0.85 !important;
+}
+
+.divider {
+  background-color: gray;
 }
