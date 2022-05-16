@@ -2,6 +2,7 @@ from flask import *
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from . import db
+from flask_login import login_user, logout_user
 
 auth = Blueprint('auth', __name__)
 
@@ -67,9 +68,29 @@ def login():
 @auth.route('/login/', methods=['POST'])
 def login_auth():
 
+    email = request.form.get('email')
+    password = request.form.get('password')
+    remember_me = True if request.form.get('remember') else None
+
+    user = User.query.filter_by(email=email).first()
+
+    if not user or not check_password_hash(user.password, password):
+
+        flash('Wrong password or email. Please try again.', category='error')
+
+        return redirect(url_for('auth.login'))
+
+    login_user(user, remember=remember_me)
+
+    flash('Logged in successfully!', category='success')
+
     return redirect(url_for('views.dashboard'))
 
 @auth.route('/logout/')
 def logout():
 
-    return 'logout page.'
+    logout_user()
+
+    flash('Logged out successfully!', category='success')
+
+    return redirect(url_for('auth.login'))

@@ -20,7 +20,7 @@
     <!-- style.css -->
 
     <!-- page title -->
-    <title>{% block title %} {% endblock %}</title>
+    <title>SPA | {% block title %} {% endblock %}</title>
     <!-- page title -->
   </head>
   <!--  -->
@@ -49,11 +49,21 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
+              {% if current_user.is_authenticated %}
+              <!--  -->
+              <p class="navbar-item button is-light">
+                <em>Current user: </em>_<strong>{{ logged_user }}</strong>_
+              </p>
+              <a class="button is-danger" href="/logout"> Log out </a>
+              <!--  -->
+              {% else %}
+              <!--  -->
               <a class="button is-primary" href="/signup">
                 <strong>Sign up</strong>
               </a>
               <a class="button is-info" href="/login"> Log in </a>
-              <a class="button is-danger" href="/logout"> Log out </a>
+              <!--  -->
+              {% endif %}
             </div>
           </div>
         </div>
