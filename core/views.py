@@ -20,6 +20,13 @@ def dashboard():
 
     return render_template('dashboard.html', logged_user=current_user.name, all_students=students, total=total_students)
 
+@views.route('/dashboard/<int:id>/')
+def student_details(id):
+
+    this_student = Student.query.filter_by(id=id).first()
+
+    return render_template('dash_details.html', student=this_student)
+
 @views.route('/add_student/', methods=['POST'])
 def add_student():
 
