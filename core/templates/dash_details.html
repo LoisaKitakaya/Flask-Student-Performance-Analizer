@@ -1,0 +1,164 @@
+<!-- inherit from base template -->
+{% extends 'base.html' %}
+<!-- inherit from base template -->
+
+<!-- page title -->
+{% block title %} Dashboard {% endblock %}
+<!-- page title -->
+
+<!-- app content -->
+{% block app %}
+<!-- app goes here -->
+<div class="dashboard">
+  <div class="dash-menu menu">
+    <p class="menu-label">Dashboard</p>
+    <ul class="menu-list">
+      <li>
+        <a class="has-background-dark has-text-light"
+          >{{ student.firstname }} {{ student.secondname }}</a
+        >
+        <ul>
+          <li>
+            <a href="/dashboard/{{ student.id }}"
+              ><i class="bi bi-arrow-clockwise"></i> Refresh</a
+            >
+          </li>
+          <li>
+            <a href="/dashboard"><i class="bi bi-arrow-left-short"></i> Back</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p class="menu-label">Student Data</p>
+    <ul class="menu-list">
+      <li>
+        <a id="visualize-data-btn">Visualize performance</a>
+        <ul id="visualize-data">
+          <li id="asd"><a>Student data</a></li>
+          <li id="pyd"><a>Per year data</a></li>
+          <li id="psd"><a>Per sem data</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- add new student record -->
+    <a href="#" class="button is-light add-grades">Add grades</a>
+    <!-- add new student record -->
+  </div>
+  <div class="dash-body">
+    <div id="student-list">
+      <table class="table is-hoverable is-fullwidth">
+        <thead class="has-background-grey-light">
+          <tr>
+            <th>id</th>
+            <th>First name</th>
+            <th>Second name</th>
+            <th>Student age</th>
+            <th>Year of study</th>
+            <th>Student gender</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          {% if student %}
+          <!--  -->
+          <tr>
+            <th class="is-underlined">{{student.id}}</th>
+            <td>{{student.firstname}}</td>
+            <td>{{student.secondname}}</td>
+            <td>{{student.age}}</td>
+            <th class="is-underlined">{{student.year}}</th>
+            <td>{{student.gender}}</td>
+            <td>
+              <a class="edit-student"><i class="bi bi-pencil-square"></i></a>
+            </td>
+            <td>
+              <a
+                href="/delete_student/{{ student.id }}"
+                class="has-text-danger"
+              >
+                <i class="bi bi-trash"></i>
+              </a>
+            </td>
+          </tr>
+          <!--  -->
+          {% endif %}
+        </tbody>
+      </table>
+      <!-- students table -->
+
+      <hr class="divider" />
+      <p class="is-size-3 has-text-centered is-underlined">Grades</p>
+      <br />
+
+      <!-- grades table -->
+      {% if grades %}
+      <!--  -->
+      <table class="table is-hoverable is-fullwidth">
+        <thead class="has-background-grey-light">
+          <tr>
+            <th>Science</th>
+            <th>Technology</th>
+            <th>Engineering</th>
+            <th>Math</th>
+            <th>History</th>
+            <th>Philosophy</th>
+            <th>Language</th>
+            <th>Semester</th>
+            <th>Year</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for grade in grades %}
+          <!--  -->
+          <tr>
+            <td>{{ grade.science }} %</td>
+            <td>{{ grade.technology }} %</td>
+            <td>{{ grade.engineering }} %</td>
+            <td>{{ grade.math }} %</td>
+            <td>{{ grade.history }} %</td>
+            <td>{{ grade.philosophy }} %</td>
+            <td>{{ grade.language }} %</td>
+            <th class="is-underlined">{{ grade.semester }}</th>
+            <th class="is-underlined">{{ grade.year }}</th>
+            <td>
+              <a class="edit-grades"><i class="bi bi-pencil-square"></i></a>
+            </td>
+            <td>
+              <a href="/delete_grades/{{ grade.id }}" class="has-text-danger">
+                <i class="bi bi-trash"></i>
+              </a>
+            </td>
+          </tr>
+          <!--  -->
+          {% endfor %}
+        </tbody>
+      </table>
+      <!--  -->
+      {% else %}
+      <!--  -->
+      <p class="is-size-5 has-text-centered">No grades have been posted yet.</p>
+      <!--  -->
+      {% endif %}
+      <!-- grades table -->
+    </div>
+  </div>
+</div>
+
+<!-- include add students template -->
+{% include 'edit_students.html' %}
+<!-- include add students template -->
+
+<!-- include add grades template -->
+{% include 'add_grades.html' %}
+<!-- include add grades template -->
+
+<!-- include edit grades template -->
+{% include 'edit_grades.html' %}
+<!-- include edit grades template -->
+
+<!-- app goes here -->
+{% endblock %}
+<!-- app content -->

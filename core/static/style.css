@@ -81,7 +81,8 @@ body {
   overflow-y: auto;
 }
 
-.add-student {
+.add-student,
+.add-grades {
   position: fixed;
   bottom: 1rem;
   left: 4.5rem;

@@ -43,6 +43,26 @@ $(document).ready(() => {
     el.classList.remove("is-active");
   };
 
+  openAddGradesModal = () => {
+    const el = document.getElementById("add-grades-modal");
+    el.classList.add("is-active");
+  };
+
+  closeAddGradesModal = () => {
+    const el = document.getElementById("add-grades-modal");
+    el.classList.remove("is-active");
+  };
+
+  openEditGradesModal = () => {
+    const el = document.getElementById("edit-grades-modal");
+    el.classList.add("is-active");
+  };
+
+  closeEditGradesModal = () => {
+    const el = document.getElementById("edit-grades-modal");
+    el.classList.remove("is-active");
+  };
+
   $(".add-student").click(() => {
     openStudentModal();
   });
@@ -57,5 +77,21 @@ $(document).ready(() => {
 
   $(".close-edit-modal").click(() => {
     closeEditModal();
+  });
+
+  $(".add-grades").click(() => {
+    openAddGradesModal();
+  });
+
+  $(".close-grades-modal").click(() => {
+    closeAddGradesModal();
+  });
+
+  $(".edit-grades").click(() => {
+    openEditGradesModal();
+  });
+
+  $(".close-gradesedit-modal").click(() => {
+    closeEditGradesModal();
   });
 });

@@ -1,0 +1,156 @@
+<!-- add student modal -->
+<div class="modal" id="add-grades-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head has-background-info-light">
+      <p class="modal-card-title">Add Grades</p>
+      <button class="delete close-grades-modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <form action="/add_grades" method="POST">
+        <div class="field">
+          <label class="label">Science grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="science"
+              required
+              placeholder="science grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Technology grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="technology"
+              required
+              placeholder="technology grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Engineering grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="engineering"
+              required
+              placeholder="engineering grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Math grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="math"
+              required
+              placeholder="math grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">History grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="history"
+              required
+              placeholder="history grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Philosophy grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="philosophy"
+              required
+              placeholder="philosophy grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Language grades</label>
+          <div class="control">
+            <input
+              type="number"
+              name="language"
+              required
+              placeholder="language grades (in %)"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Current semester</label>
+          <div class="control">
+            <input
+              type="number"
+              name="semester"
+              required
+              placeholder="e.g. 2"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Year of study</label>
+          <div class="control">
+            <input
+              type="number"
+              name="year"
+              required
+              placeholder="e.g. 4"
+              value="0"
+              class="input"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Student's ID</label>
+          <div class="control">
+            <input
+              type="number"
+              name="student_id"
+              required
+              placeholder="e.g. 34"
+              value="{{ student.id }}"
+              class="input"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button type="submit" class="button is-success is-fullwidth">
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot has-background-info-light">
+      <button class="button close-grades-modal">Cancel</button>
+    </footer>
+  </div>
+</div>
+<!-- add student modal -->
