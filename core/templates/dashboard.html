@@ -10,15 +10,74 @@
 {% block app %}
 <!-- app goes here -->
 <div class="dashboard">
-  <section class="hero is-large">
-    <div class="hero-body">
-      <div class="box">
-        <p class="title">Student Performance Analizer (SPA)</p>
-        <p class="subtitle">Dashboard page</p>
-      </div>
+  <div class="dash-menu menu">
+    <p class="menu-label">Dashboard</p>
+    <ul class="menu-list">
+      <li>
+        <a class="has-background-dark has-text-light">All Student</a>
+        <ul>
+          <li>Total: {{ total }}</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="menu-label">Student Data</p>
+    <ul class="menu-list">
+      <li>
+        <a id="visualize-data-btn">Visualize performance</a>
+        <ul id="visualize-data">
+          <li id="asd"><a>All student data</a></li>
+          <li id="pyd"><a>Per year data</a></li>
+          <li id="psd"><a>Per sem data</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- add new student record -->
+    <a href="#" class="button is-light add-student">Add student</a>
+    <!-- add new student record -->
+  </div>
+  <div class="dash-body">
+    <div id="student-list">
+      <table class="table is-hoverable is-fullwidth">
+        <thead class="has-text-centered has-background-grey-light">
+          <tr>
+            <th>#id</th>
+            <th>First name</th>
+            <th>Second name</th>
+            <th>Student age</th>
+            <th>Year of study</th>
+            <th>Student gender</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody class="has-text-centered">
+          {% for student in all_students %}
+          <!--  -->
+          <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.firstname}}</td>
+            <td>{{student.secondname}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.year}}</td>
+            <td>{{student.gender}}</td>
+            <td>
+              <a href="#" class="is-underlined"
+                ><i class="bi bi-box-arrow-up-right"></i
+              ></a>
+            </td>
+          </tr>
+          <!--  -->
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- students table -->
     </div>
-  </section>
+  </div>
 </div>
+
+<!-- include add students template -->
+{% include 'add_students.html' %}
+<!-- include add students template -->
+
 <!-- app goes here -->
 {% endblock %}
 <!-- app content -->

@@ -15,7 +15,9 @@ class User(db.Model, UserMixin):
 class Student(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
+    firstname = db.Column(db.String(100))
+    secondname = db.Column(db.String(100))
+    age = db.Column(db.Integer)
     year = db.Column(db.Integer)
     gender = db.Column(db.String(50))
     grades = db.relationship('Grades')
@@ -31,6 +33,11 @@ class Grades(db.Model):
     technology = db.Column(db.Integer)
     engineering = db.Column(db.Integer)
     math = db.Column(db.Integer)
+    history = db.Column(db.Integer)
+    philosophy = db.Column(db.Integer)
+    language = db.Column(db.Integer)
+    semester = db.Column(db.Integer)
+    year = db.Column(db.Integer)
     student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
 
     def __repr__(self) -> str:

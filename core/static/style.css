@@ -2,9 +2,15 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 /* bulma */
 
+body {
+  background-image: url("https://res.cloudinary.com/dit0fii18/image/upload/v1652679502/samples/backgrounds/vintage-textured-paper-background-vector_resized_ex6h4g.jpg");
+  background-attachment: scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .app {
   min-height: 100vh;
-  background-image: url("https://res.cloudinary.com/dit0fii18/image/upload/v1652679502/samples/backgrounds/vintage-textured-paper-background-vector_resized_ex6h4g.jpg");
 }
 
 .submit-btn {
@@ -40,11 +46,50 @@
 
 .box,
 .card,
-.navbar {
+.table,
+.navbar,
+.dash-menu,
+.modal-card-body {
   background-color: whitesmoke !important;
   opacity: 0.85 !important;
 }
 
+.navbar {
+  border-bottom: 1px solid gray;
+}
+
 .divider {
   background-color: gray;
+}
+
+.dash-menu {
+  left: 0;
+  width: 20%;
+  border-right: 2px solid gray;
+}
+
+.dash-body {
+  right: 0;
+  width: 80%;
+}
+
+.dash-menu,
+.dash-body {
+  position: absolute;
+  height: 100vh;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.add-student {
+  position: fixed;
+  bottom: 1rem;
+  left: 4.5rem;
+  font-weight: bold;
+  border: 1px solid black !important;
+}
+
+.modal-card-head,
+.modal-card-foot {
+  opacity: 0.85 !important;
 }
