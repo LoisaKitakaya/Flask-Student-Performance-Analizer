@@ -1,4 +1,4 @@
-from .models import Student, Grades, list_to_dict
+from .models import Student, Grades
 from flask_restful import Resource, abort, fields, marshal_with
 from flask import jsonify
 from .schema import StudentSchema, GradeSchema
@@ -26,18 +26,6 @@ grade_fields = {
     'student id': fields.Integer
 }
 
-class GetAllStudents(Resource):
-
-    def get(self):
-
-        students = Student.query.all()
-
-        student_schema = StudentSchema(many=True)
-
-        result = student_schema.dump(students)
-
-        return jsonify(result)
-
 class GetStudent(Resource):
 
     @marshal_with(student_fields)
@@ -62,6 +50,18 @@ class GetStudentGrades(Resource):
         result = grades_schema.dump(grades)
 
         return jsonify(result)
+
+class AllGrades(Resource):
+
+    def get(self):
+
+        grades = Grades.query.all()
+
+        grades_schema = GradeSchema(many=True)
+
+        result = grades_schema.dump(grades)
+
+        return jsonify({'data': result})
 
 
 

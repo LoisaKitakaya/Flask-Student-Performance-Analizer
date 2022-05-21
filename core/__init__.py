@@ -29,11 +29,9 @@ def create_app():
 
     api = Api(app)
 
-    from .endpoints import GetStudent, GetStudentGrades, GetAllStudents
+    from .endpoints import AllGrades
 
-    api.add_resource(GetStudent, '/student/<int:id>/')
-    api.add_resource(GetStudentGrades, '/student/grades/<int:id>/')
-    api.add_resource(GetAllStudents, '/all_students/')
+    api.add_resource(AllGrades, '/all_grades/')
 
     from .models import User
 

@@ -94,3 +94,22 @@ body {
 .modal-card-foot {
   opacity: 0.85 !important;
 }
+
+.charts {
+  padding: 1rem;
+  background-color: rgba(245, 245, 245, 0.781);
+}
+
+.dash-body::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+.dash-body::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+.dash-body::-webkit-scrollbar-thumb {
+  background-color: rgba(245, 245, 245, 0.753); /* color of the scroll thumb */
+  border-radius: 0.3rem; /* roundness of the scroll thumb */
+  border: 1px solid darkslategray; /* creates padding around scroll thumb */
+}

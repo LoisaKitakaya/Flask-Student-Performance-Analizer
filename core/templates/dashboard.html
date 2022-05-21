@@ -18,7 +18,7 @@
         <ul>
           <li>
             <a href="/dashboard"
-              ><i class="bi bi-arrow-clockwise"></i> Refresh</a
+              ><i class="bi bi-arrow-clockwise all-students"></i> Refresh</a
             >
           </li>
           <li>
@@ -32,10 +32,8 @@
       <li>
         <a id="visualize-data-btn">Data Analysis</a>
         <ul id="visualize-data">
-          <li id="asd"><a>All student data</a></li>
-          <li id="pyd"><a>All per year data</a></li>
-          <li id="psd"><a>All per sem data</a></li>
-          <li><a href="#" class="fetch-student">Fetch Student</a></li>
+          <li id="psd"><a>Average of all units per sem</a></li>
+          <li><a href="#" class="avg-all-unts">Average of all units</a></li>
         </ul>
       </li>
     </ul>
@@ -72,6 +70,21 @@
         </tbody>
       </table>
       <!-- students table -->
+      <p class="has-text-centered is-size-3 is-underlined has-text-dark">
+        Charts
+      </p>
+      <hr class="divider" />
+      <!-- charts -->
+      <div class="charts">
+        <canvas
+          id="all-unit-average"
+          aria-label="Hello ARIA World"
+          width="400"
+          height="200"
+          role="img"
+        ></canvas>
+      </div>
+      <!-- charts -->
     </div>
   </div>
 </div>

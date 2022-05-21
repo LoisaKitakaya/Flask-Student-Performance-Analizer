@@ -70,23 +70,3 @@ class Grades(db.Model):
             'year of study': self.year,
             'student id': self.student_id
         }
-
-def list_to_dict(obj):
-
-    for i in range(len(obj)):
-
-        # return {
-        #     'id': obj['id'],
-        #     'science': obj['science'],
-        #     'technology': obj['technology'],
-        #     'engineering': obj['engineering'],
-        #     'math': obj['math'],
-        #     'history': obj['history'],
-        #     'philosophy': obj['philosophy'],
-        #     'language': obj['language'],
-        #     'semester': obj['semester'],
-        #     'year of study': obj['year'],
-        #     'student id': obj['student_id']
-        # }
-
-        return obj[i]
