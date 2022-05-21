@@ -15,13 +15,6 @@ $(document).ready(() => {
     vizBtn.toggleClass("is-active");
   });
 
-  // chart.js
-  var myFunc = () => {
-    return chartData;
-  };
-
-  console.log(chartData);
-
   // modal
   openStudentModal = () => {
     const el = document.getElementById("add-student-modal");
@@ -93,5 +86,17 @@ $(document).ready(() => {
 
   $(".close-gradesedit-modal").click(() => {
     closeEditGradesModal();
+  });
+
+  // fetch data
+  $(".fetch-student").click(() => {
+    $.ajax({
+      type: "GET",
+      url: "/all_students",
+      dataType: "json",
+      success: (response) => {
+        console.log(response);
+      },
+    });
   });
 });

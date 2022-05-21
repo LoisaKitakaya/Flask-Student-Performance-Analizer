@@ -11,7 +11,7 @@
 <!-- app goes here -->
 <div class="dashboard">
   <div class="dash-menu menu">
-    <p class="menu-label">Dashboard</p>
+    <p class="menu-label">Student Data</p>
     <ul class="menu-list">
       <li>
         <a class="has-background-dark has-text-light"
@@ -29,10 +29,10 @@
         </ul>
       </li>
     </ul>
-    <p class="menu-label">Student Data</p>
+    <p class="menu-label">Charts</p>
     <ul class="menu-list">
       <li>
-        <a id="visualize-data-btn">Visualize performance</a>
+        <a id="visualize-data-btn">Data Analysis</a>
         <ul id="visualize-data">
           <li id="asd"><a>Student data</a></li>
           <li id="pyd"><a>Per year data</a></li>
@@ -88,7 +88,7 @@
       <!-- students table -->
 
       <hr class="divider" />
-      <p class="is-size-3 has-text-centered is-underlined">Grades</p>
+      <p class="is-size-3 has-text-centered is-underlined">Grades in (%)</p>
       <br />
 
       <!-- grades table -->
@@ -114,13 +114,13 @@
           {% for grade in grades %}
           <!--  -->
           <tr>
-            <td>{{ grade.science }} %</td>
-            <td>{{ grade.technology }} %</td>
-            <td>{{ grade.engineering }} %</td>
-            <td>{{ grade.math }} %</td>
-            <td>{{ grade.history }} %</td>
-            <td>{{ grade.philosophy }} %</td>
-            <td>{{ grade.language }} %</td>
+            <td>{{ grade.science }}</td>
+            <td>{{ grade.technology }}</td>
+            <td>{{ grade.engineering }}</td>
+            <td>{{ grade.math }}</td>
+            <td>{{ grade.history }}</td>
+            <td>{{ grade.philosophy }}</td>
+            <td>{{ grade.language }}</td>
             <th class="is-underlined">{{ grade.semester }}</th>
             <th class="is-underlined">{{ grade.year }}</th>
             <td>

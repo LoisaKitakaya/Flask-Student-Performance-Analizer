@@ -24,7 +24,18 @@ class Student(db.Model):
 
     def __repr__(self) -> str:
         
-        return f'Student name: {self.name}'
+        return f'Student name: {self.firstname} {self.secondname}'
+
+    def to_dict(self):
+
+        return {
+            'id': self.id,
+            'first name': self.firstname,
+            'second name': self.secondname,
+            'age': self.age,
+            'year': self.year,
+            'gender': self.gender
+        }
 
 class Grades(db.Model):
     
@@ -43,3 +54,39 @@ class Grades(db.Model):
     def __repr__(self) -> str:
         
         return f'Grades for user with id: {str(self.student_id)}'
+
+    def to_dict(self):
+
+        return {
+            'id': self.id,
+            'science': self.science,
+            'technology': self.technology,
+            'engineering': self.engineering,
+            'math': self.math,
+            'history': self.history,
+            'philosophy': self.philosophy,
+            'language': self.language,
+            'semester': self.semester,
+            'year of study': self.year,
+            'student id': self.student_id
+        }
+
+def list_to_dict(obj):
+
+    for i in range(len(obj)):
+
+        # return {
+        #     'id': obj['id'],
+        #     'science': obj['science'],
+        #     'technology': obj['technology'],
+        #     'engineering': obj['engineering'],
+        #     'math': obj['math'],
+        #     'history': obj['history'],
+        #     'philosophy': obj['philosophy'],
+        #     'language': obj['language'],
+        #     'semester': obj['semester'],
+        #     'year of study': obj['year'],
+        #     'student id': obj['student_id']
+        # }
+
+        return obj[i]

@@ -1,8 +1,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_restful import Api
+from flask_marshmallow import Marshmallow
 
 db = SQLAlchemy()
+ma = Marshmallow()
+
 DB_NAME = 'database.db'
 
 def create_app():
@@ -15,11 +19,21 @@ def create_app():
 
     db.init_app(app)
 
+    ma.init_app(app)
+
     from .views import views
     from .auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+
+    api = Api(app)
+
+    from .endpoints import GetStudent, GetStudentGrades, GetAllStudents
+
+    api.add_resource(GetStudent, '/student/<int:id>/')
+    api.add_resource(GetStudentGrades, '/student/grades/<int:id>/')
+    api.add_resource(GetAllStudents, '/all_students/')
 
     from .models import User
 

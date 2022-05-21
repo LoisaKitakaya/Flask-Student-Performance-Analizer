@@ -149,9 +149,3 @@ def delete_grades(id):
     flash('Student grades have been deleted successfully.', category='success')
 
     return redirect(url_for('views.dashboard'))
-
-@views.route('/admin/')
-@login_required
-def admin():
-
-    return render_template('admin.html', logged_user=current_user.name)

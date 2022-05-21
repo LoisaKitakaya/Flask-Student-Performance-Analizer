@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <!-- bootstrap icons -->
-    
+
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
@@ -20,6 +20,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- jquery -->
+
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- chart.js -->
 
     <!-- style.css -->
     <link
@@ -121,12 +125,6 @@
     <!-- app messages -->
   </body>
   <!--  -->
-
-  <!-- chart data to pass to main.js -->
-  <script>
-    let chartData = "{{ logged_user }}";
-  </script>
-  <!-- chart data to pass to main.js -->
 
   <!-- main.js -->
   <script src="{{ url_for('static', filename='main.js') }}"></script>
