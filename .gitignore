@@ -2,3 +2,4 @@
 .vscode
 core/__pycache__
 core/database.db
+__pycache__
