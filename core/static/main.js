@@ -94,7 +94,7 @@ $(document).ready(() => {
   });
 
   const allUnitAverage = $("#all-unit-average");
-  $("#all-unit-average").hide();
+  $(".charts").hide();
 
   let science = [];
   let scienceAvg;
@@ -201,23 +201,21 @@ $(document).ready(() => {
       url: "/all_grades",
       dataType: "json",
       beforeSend: () => {
-        $("#all-unit-average").hide();
+        $(".charts").show();
       },
       success: (response) => {
         data = response.data;
         console.log(data);
 
-        scienceGrades(this.data);
-        technologyGrades(this.data);
-        engineeringGrades(this.data);
-        mathGrades(this.data);
-        historyGrades(this.data);
-        philosophyGrades(this.data);
-        languageGrades(this.data);
+        scienceGrades(data);
+        technologyGrades(data);
+        engineeringGrades(data);
+        mathGrades(data);
+        historyGrades(data);
+        philosophyGrades(data);
+        languageGrades(data);
       },
       complete: () => {
-        //
-        $("#all-unit-average").show();
         //
         const myChart = new Chart(allUnitAverage, {
           type: "bar",
@@ -233,7 +231,7 @@ $(document).ready(() => {
             ],
             datasets: [
               {
-                label: "Average per unit performance",
+                label: "Average per unit performance (%)",
                 data: [
                   scienceAvg,
                   technologyAvg,
@@ -274,6 +272,19 @@ $(document).ready(() => {
           },
         });
       },
+    });
+  });
+
+  console.log(myVar);
+  // chart
+  $(".avg-all-unit-avg").click(() => {
+    $.ajax({
+      type: "GET",
+      url: "/student/" + myVar.id,
+      dataType: "json",
+      beforeSend: () => {},
+      success: (response) => {},
+      complete: () => {},
     });
   });
 });

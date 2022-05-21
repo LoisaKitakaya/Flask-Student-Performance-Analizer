@@ -34,9 +34,7 @@
       <li>
         <a id="visualize-data-btn">Data Analysis</a>
         <ul id="visualize-data">
-          <li id="asd"><a>Student data</a></li>
-          <li id="pyd"><a>Per year data</a></li>
-          <li id="psd"><a>Per sem data</a></li>
+          <li><a class="avg-all-unit-avg">Total average</a></li>
         </ul>
       </li>
     </ul>
@@ -144,8 +142,29 @@
       {% endif %}
       <!-- grades table -->
     </div>
+    <p class="has-text-centered is-size-3 is-underlined has-text-dark">
+      Charts
+    </p>
+    <hr class="divider" />
+    <!-- charts -->
+    <div class="charts">
+      <canvas
+        id="all-unit-average"
+        aria-label="Hello ARIA World"
+        width="400"
+        height="200"
+        role="img"
+      ></canvas>
+    </div>
+    <!-- charts -->
   </div>
 </div>
+
+<!-- student -->
+{% if student %}
+<!--  -->
+{% endif %}
+<!-- student -->
 
 <!-- include add students template -->
 {% include 'edit_students.html' %}

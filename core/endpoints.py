@@ -63,6 +63,30 @@ class AllGrades(Resource):
 
         return jsonify({'data': result})
 
+class GradesPerSem(Resource):
 
+    def get(self):
+
+        grades_sem1 = Grades.query.filter_by(semester=1).all()
+
+        grades_sem2 = Grades.query.filter_by(semester=2).all()
+
+        grades_sem3 = Grades.query.filter_by(semester=3).all()
+
+        grades_schema = GradeSchema(many=True)
+
+        result_sem1 = grades_schema.dump(grades_sem1)
+
+        result_sem2 = grades_schema.dump(grades_sem2)
+
+        result_sem3 = grades_schema.dump(grades_sem3)
+
+        return jsonify({
+            'data': {
+                'sem1': result_sem1,
+                'sem2': result_sem2,
+                'sem3': result_sem3
+            }
+        })
 
         
